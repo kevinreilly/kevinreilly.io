@@ -1,0 +1,36 @@
+{
+	"posts": [
+		{
+			"title": "Into the Glacier",
+			"slug": "into-the-glacier",
+			"date": "05112015",
+			"location": "Thrihnukagigur, Iceland",
+			"categories": "photography",
+			"tags": ["iceland","volcano","travel"],
+			"content": {
+				"htmlContent":"Thrihnukagigur volcano is dormant – it last erupted over 4,000 years ago. There are no indications of it erupting again in the near future. The volcano’s name, mostly unpronounceable for anyone other than locals, would be directly translated as ‘Three Peaks Crater’. The name comes from Árni B. Stefánsson, who was the first to explore the vault and who has pleaded the case for making it accessible for years. The three craters (one of which you will be descending into) are prominent landmarks, standing against the sky on the highland edge, about 20 km (13 miles) southeast of the capital area, within the protected area of Bláfjöll Country Park",
+				"images": {
+					"album":true,
+					"numImages":37,
+					"featuredImage":1
+				}
+			}
+		},
+		{
+			"title": "Into the Glacier 2",
+			"slug": "into-the-glacier",
+			"date": "05112015",
+			"location": "Thrihnukagigur, Iceland",
+			"categories": "photography",
+			"tags": ["iceland","volcano","travel"],
+			"content": {
+				"htmlContent":"Thrihnukagigur volcano is dormant – it last erupted over 4,000 years ago. There are no indications of it erupting again in the near future. The volcano’s name, mostly unpronounceable for anyone other than locals, would be directly translated as ‘Three Peaks Crater’. The name comes from Árni B. Stefánsson, who was the first to explore the vault and who has pleaded the case for making it accessible for years. The three craters (one of which you will be descending into) are prominent landmarks, standing against the sky on the highland edge, about 20 km (13 miles) southeast of the capital area, within the protected area of Bláfjöll Country Park",
+				"images": {
+					"album":true,
+					"numImages":37,
+					"featuredImage":1
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"iconSlides": [
+		{
+			"icon": "fa-camera-retro"
+		},
+		{
+			"icon": "fa-beer"
+		},
+		{
+			"icon": "fa-laptop"
+		},
+		{
+			"icon": "fa-tree"
+		},
+		{
+			"icon": "fa-rocket"
+		},
+		{
+			"icon": "fa-wordpress"
+		},
+		{
+			"icon": "fa-map"
+		},
+		{
+			"icon": "fa-hand-spock-o"
+		},
+		{
+			"icon": "fa-steam-square"
+		},
+		{
+			"icon": "fa-rebel"
+		},
+		{
+			"icon": "fa-bicycle"
+		},
+		{
+			"icon": "fa-music"
+		}
+	]
+}

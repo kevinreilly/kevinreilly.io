@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-12">
+		<h2>Email</h2>
+		<p>some of my most recent responsive email projects</p>
+	</div>
+</div>
+<div class="row portfolio-list">
+    <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="x in email">
+    	<div class="col-md-12">
+	    	<img class="img-responsive" ng-src="{{rootURL}}/img/portfolio/{{x.slug}}-thumb.jpg">
+	    	<div class="portfolio-item-overlay">
+	    		<div class="div-table">
+	    			<div class="div-table-row">
+	    				<div class="div-table-cell">
+	    					<img ng-src="{{rootURL}}/img/portfolio/{{x.slug}}-logo.png">
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div class="portfolio-item-desc">
+	    		<div>
+					<h3>{{x.title}}</h3>
+					<a href="{{x.url}}" target="_blank">View &raquo;</a><br>
+					<p>{{x.desc}}</p>
+				</div>
+			</div>
+	    </div>
+    </div>
+</div>

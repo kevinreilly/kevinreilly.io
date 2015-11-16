@@ -1,0 +1,98 @@
+{
+	"wordpress": [
+		{
+			"title": "Pierry Software",
+			"slug": "pierry",
+			"url": "http://pierrysoftware.com",
+			"desc": "Very clean and responsive, full-width display. The CTA button fixed to the side of every page opens up a lead generation form and is fully integrated into an ExactTarget data extension. The careers section is populated with a custom post type that is very easy for hiring managers to edit and make additions to."
+		},
+		{
+			"title": "Envirotronics",
+			"slug": "envirotronics",
+			"url": "http://envirotronics.com",
+			"desc": "Envirotronics' new site matches the styling of their parent company, makes it easy for customers to find the sales and service contacts they need and provides an intuitive user experience when browsing the vast amount of categorized products. Unlike their old website, this one is fully responsive and it super easy to make changes and additions to."
+		},
+		{
+			"title": "BATS Improv",
+			"slug": "bats",
+			"url": "http://improv.org",
+			"desc": "BATS Improv needed a site responsive that made it easy for studio staff to schedule upcoming shows, edit staff profiles and promote special events. This required a very complex system of custom post types and dynamic repeatable custom fields. In the end, BATS was very satisfied with the site and have been able to manage it without any addition development work."
+		},
+		{
+			"title": "Redwood City Chamber of Commerce",
+			"slug": "rwcc",
+			"url": "http://redwoodcitychamber.com",
+			"desc": "Redwood City Chamber of Commerce's new site makes it easy for staff to schedule upcoming events, edit staff profiles and add new businesses to it's vast directory. The site also utilizes WooCommerce for selling passes to events and allowing businesses to pay dues/ registration fees."
+		},
+		{
+			"title": "Adventure Associates",
+			"slug": "aa",
+			"url": "http://adventureassoc.com",
+			"desc": "Adventure Associates needed a reponsive site that was easy to make edit and additions to. Their new site allows staff to easily edit the blog, individual locations, service information and whitepapers. They new site also has an fully integrated Live Chat feature."
+		}
+	],
+	"web": [
+		{
+			"title": "Vino Visit",
+			"slug": "vinovisit",
+			"url": "http://vinovisit.com",
+			"desc": "Vino Visit is a winery marketing company with hundreds of Napa Valley wineries as clients. I solely developed a Wordpress Multisite Network that gave each winery it's own fully branded iPad webapp for in-person ratings, a WooCommerce microsite for selling their wines outside of the winery, as well as a fully branded email campaign to promote the ecommerce site."
+		},
+		{
+			"title": "Home Union",
+			"slug": "home-union",
+			"url": "http://kevinreilly.io/portfolio-files/home-union",
+			"desc": "Home Union description"
+		},
+		{
+			"title": "Naturebox Modal",
+			"slug": "naturebox",
+			"url": "http://naturebox.com",
+			"desc": "Naturebox description"
+		},
+		{
+			"title": "Cornell Preference Center",
+			"slug": "cornell-preference-center",
+			"url": "http://kevinreilly.io/portfolio-files/cornell-preference-center",
+			"desc": "Cornell description"
+		},
+		{
+			"title": "Mendelements",
+			"slug": "mendelements",
+			"url": "http://mendelements.com",
+			"desc": "Mendelements description"
+		}
+	],
+	"email": [
+		{
+			"title": "Cornell Newsletters",
+			"slug": "cornell-newsletters",
+			"url": "http://kevinreilly.io/portfolio-files/cornell-newsletters",
+			"desc": "Cornell Newsletters description"
+		},
+		{
+			"title": "LifeLock",
+			"slug": "lifelock",
+			"url": "http://kevinreilly.io/portfolio-files/lifelock",
+			"desc": "LifeLock description"
+		},
+		{
+			"title": "San Mateo Credit Union",
+			"slug": "smcu",
+			"url": "http://kevinreilly.io/portfolio-files/smcu",
+			"desc": "SMCU description"
+		},
+		{
+			"title": "San Jose Earthquakes",
+			"slug": "earthquakes",
+			"url": "http://kevinreilly.io/portfolio-files/earthquakes",
+			"desc": "Earthquakes description"
+		},
+		{
+			"title": "Intego",
+			"slug": "intego",
+			"url": "http://kevinreilly.io/portfolio-files/intego",
+			"desc": "Intego description"
+		}
+	]
+}

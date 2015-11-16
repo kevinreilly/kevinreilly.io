@@ -1,0 +1,20 @@
+<script>
+	// portfolio items
+    $('.portfolio-list').on('mouseenter', '.portfolio-item', function(){
+        $(this).addClass('portfolio-item-hover');
+    });
+    $('.portfolio-list').on('mouseleave', '.portfolio-item', function(){
+        $(this).removeClass('portfolio-item-hover');
+    });
+    
+    $('.portfolio-list').on('click', '.portfolio-item', function(){
+        $(this).addClass('portfolio-item-open');
+        $(this).find('.portfolio-item-desc').slideToggle();
+        $('html, body').animate({
+            scrollTop: $(this).offset().top - 50
+        }, 500);
+    });
+    $('.portfolio-list').on('click', '.portfolio-item-open', function(){
+        $(this).removeClass('portfolio-item-open');
+    });
+</script>

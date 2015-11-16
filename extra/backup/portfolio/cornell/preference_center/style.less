@@ -1,0 +1,251 @@
+@mainFont: 'Century Gothic', CenturyGothic, AppleGothic, 'Helvetica Neue', Arial, sans-serif;
+@headerFont: 'Times New Roman', Times, serif;
+
+@black: #071921;
+@red: #9f3224;
+@tan: #ad9c62;
+@grey: #b4babc;
+
+@stripes: 'img/diagonal-bg.png';
+
+body {
+	color: #333;
+	font-family: @mainFont;
+	font-size:16px;
+}
+.vcenter {
+    display:inline-block;
+    vertical-align:middle;
+    float:none;
+}
+.no-margin {
+	margin:0;
+}
+h1 {
+	font-weight:300;
+}
+h2, h3 {
+	font-weight:bold;
+	font-family: @headerFont;
+	font-style:italic;
+}
+h2 {
+	font-size:36px;
+}
+h3 {
+	font-size:28px;
+	color:@red;
+}
+red {
+	color:@red;
+}
+.smallText {
+	font-size:14px;
+}
+input.form-control {
+	border:1px solid @red;
+	border-radius:0;
+	margin-bottom:30px;
+	color:#333;
+	font-size:20px;
+	line-height:26px;
+	padding-top:10px;
+}
+input.form-control::-webkit-input-placeholder {
+   color: #333;
+}
+
+input.form-control:-moz-placeholder { /* Firefox 18- */
+   color: #333;  
+}
+
+input.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: #333;  
+}
+
+input.form-control:-ms-input-placeholder {  
+   color: #333;  
+}
+input.form-control:focus, select:focus {
+	border:1px solid @red;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	outline:none;
+}
+select {
+	width:100%;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    height:34px;
+    border:1px solid #9f3224;
+    border-radius:0;
+    margin-bottom:30px;
+    color:#333;
+    font-size:20px;
+    line-height:26px;
+    padding:5px 10px;
+    background: #fff url(img/dropdown-arrow.jpg) no-repeat right top;
+}
+.topNav {
+	background-color: @black;
+	color:#fff;
+	border-bottom:5px solid @red;
+}
+.topNav > div {
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.topNav > div:nth-of-type(2){
+	text-align:right;
+}
+.coloredBanner > div {
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.tanBanner {
+	background:@tan url(@stripes);
+}
+.tanBanner > div {
+	background: @tan;
+	color:#fff;
+}
+.redBanner {
+	background:@red url(@stripes);
+}
+.redBanner > div {
+	background: @red;
+	color:#fff;
+}
+.blackBanner {
+	background:@black url(@stripes);
+}
+.blackBanner > div {
+	background: @black;
+	color:@tan;
+}
+.greyBanner {
+	background:@grey url(@stripes);
+}
+.greyBanner > div {
+	background: @grey;
+	color:@black;
+}
+.personalForm, .optinForm {
+	padding-top:30px;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+	background:@tan;
+	padding:11px 12px 6px;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default {
+	background:@red;
+	color:#fff;
+	padding:11px 12px 6px;
+}
+.optinForm .div-table-row {
+	margin-bottom:20px;
+}
+.optinForm .div-table-cell {
+	vertical-align:top;
+}
+.bootstrap-switch {
+	margin-right:20px;
+}
+.optinForm strong {
+	font-weight:bold;
+}
+.optinForm {
+	margin-bottom:10px;
+}
+.optinForm.interests .div-table-cell {
+	vertical-align:middle;
+}
+.optinForm.interests .col-md-6 {
+	margin-bottom:20px;
+}
+.unsubscribe {
+	padding-top:30px;
+	padding-bottom:15px;
+	border-bottom:4px solid @tan;
+	margin-bottom:8px;
+}
+input[type="checkbox"]{
+	-webkit-appearance: none;
+    border: 1px solid @red;
+    height: 15px;
+    width: 15px;
+    margin-top: 1px;
+}
+input[type="checkbox"]:checked {
+	background:@red;
+}
+button.btn {
+	padding:10px 20px;
+    border-radius: 0;
+    border: 0;
+    margin: 0 40px;
+}
+button h2 {
+	margin:0;
+}
+button.btn:hover {
+	background:#fff;
+	opacity:.7;
+}
+button.btn-cancel {
+	background:@tan;
+	color:#fff;
+}
+button.btn-cancel:hover {
+	background:@tan;
+	color:#fff;
+	opacity:.7;
+}
+.footer {
+	background:@black;
+	padding-top:15px;
+	padding-bottom:15px;
+	font-size:9px;
+	color:#fff;
+	font-family:Arial, sans-serif;
+}
+.footer p {
+	margin-top:10px;
+}
+.footer .col-md-7 {
+	padding-top:20px;
+	text-align:right;
+}
+.back-to-top {
+	position: fixed;
+    bottom: 100px;
+    left: 30px;
+    width: 55px;
+}
+.back-to-top a {
+	color:#001922;
+}
+@media (max-width:992px){
+	.mobileCenter {
+		text-align:center !important;
+	}
+	.marginBottom {
+		margin-bottom:20px;
+	}
+	.back-to-top {
+		display:none;
+	}
+}
+@media (min-width:992px){
+	.div-table {
+		display:table;
+	}
+	.div-table-row {
+		display:table-row;
+	}
+	.div-table-cell {
+		display:table-cell;
+		float:none;
+		vertical-align:middle;
+	}
+}

@@ -1,0 +1,94 @@
+/* Global */
+html, body {
+	overflow-x:hidden;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:300;
+	font-size:18px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:400;
+}
+.navbar-inverse, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	border:0;
+	background:none;
+}
+.navbar-inverse {
+	background:rgba(0,0,0,.8);
+}
+#main {
+	padding-top:50px;
+}
+.hero {
+	height:100vh;
+	padding:80px 30px 30px;
+	margin-top:-50px;
+}
+.hero h1 {
+	margin:0;
+	font-size:5em;
+	color:#fff;
+	font-weight:300;
+}
+.hero p {
+	text-align:center;
+	color:#fff;
+	font-size:1.5em;
+}
+.clever-title > div {
+	padding:0;
+}
+.clever-title > div:nth-of-type(1){
+	text-align:right;
+}
+.icon_carousel i.fa {
+	color:#fff;
+	font-size:5em;
+}
+.icon_carousel img {
+	height:90px !important;
+	margin:auto;
+}
+.icon_carousel a.carousel-control,
+.icon_carousel ol.carousel-indicators {
+	display:none;
+}
+
+@media(max-width:768px){
+	.hero h1 {
+		font-size:2.5em;
+	}
+	.icon_carousel i.fa {
+		font-size:2.5em;
+	}
+	.icon_carousel img {
+		height:45px !important;
+	}
+}
+
+/* Home */
+.home-page .hero {
+	background:#000 url(../img/kevin-hero-bg.jpg) bottom center no-repeat;
+	background-size:cover;
+}
+/* Updates Section */
+.updates h1 {
+	text-align:center;
+	margin:30px 0;
+}
+.updates .singlePost {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.updates .singlePost h2 {
+	margin-top:0;
+}
+/* Work */
+.portfolio {
+	padding-top:60px;
+}
+.portfolio-item {
+	margin-bottom:30px;
+}
+
+

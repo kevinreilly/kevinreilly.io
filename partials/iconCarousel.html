@@ -1,0 +1,11 @@
+<uib-carousel interval="2500" no-wrap="false">
+	<uib-slide>
+		<i class="fa fa-code"></i>
+	</uib-slide>
+	<uib-slide>
+		<img src="img/telescope-icon.png">
+	</uib-slide>
+	<uib-slide ng-repeat="icon in icons | orderBy:random">
+		<i class="fa" ng-class="icon"></i>
+	</uib-slide>
+</uib-carousel>

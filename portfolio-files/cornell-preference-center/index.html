@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cornell Profile Center</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-switch.min.css">
+		<!--<link rel="stylesheet" href="style.css">-->
+		
+		<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container-fluid" id="main-container" ng-app="formApp" ng-controller="listCtrl">
+		
+			<form action="http://cl.exct.net/DEManager.aspx" name="subscribeForm" method="post">
+	            <input type="hidden" name="_clientID" value="94760" />
+	            <input type="hidden" name="_deExternalKey" value="E9E87268-1B89-4561-B843-EA7663C9B584" />
+	            <input type="hidden" name="_action" value="add" />
+	            <input type="hidden" name="_returnXML" value="0" />
+	            <input type="hidden" name="_successURL" value="http://pierrysoftware.com/kevin/staging/cornell/profile_center_v2/thankyou.html" />
+	            <input type="hidden" name="_errorURL" value="http://google.com" />
+            
+				<div class="row topNav">
+					<div class="col-md-3 col-md-offset-1 vcenter">
+						<a href="https://sha.cornell.edu/"><img src="img/cornell-hotel-logo.png"></a>
+					</div>
+					<div class="col-md-7 vcenter">
+						<h1 class="no-margin">SUBSCRIPTION CENTER</h1>
+					</div>
+				</div>
+				<div class="row coloredBanner tanBanner">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-12 div-table">
+							<div class="col-md-12 div-table-row">
+								<div class="col-md-4 div-table-cell">
+									<h2 class="no-margin">MY PERSONAL INFORMATION</h2>
+								</div>
+								<div class="col-md-8 div-table-cell">
+									Welcome to the Cornell University School of Hotel Administration (SHA) email subscription center. Use this form to keep your contact information up to date, or to let us know what types of communications you’d like to receive. Please note: your information will be used only to provide you with relevant communications.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row personalForm">
+					<div class="col-md-8 col-md-offset-2">
+						<p class="smallText"><red>*</red> Required fields</p>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="requiredField">
+									<input type="text" class="form-control" name="fname" placeholder="First / Given Name" required>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="requiredField">
+									<input type="text" class="form-control" name="lname" placeholder="Last / Family Name" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="organization" placeholder="Organization">
+								
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="title" placeholder="Title">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<input type="text" class="form-control" name="address" placeholder="Address">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-8">
+										<input type="text" class="form-control" name="city" placeholder="City">
+									</div>
+									<div class="col-md-4">
+										<div class="countryRequired requiredField">
+											<div class="forSelect">
+												<select name="state" required>
+													<option value="null">State</option>
+													<option ng-repeat="state in states" value="{{state.name}}">{{state.name}}</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-5">
+										<div class="forSelect">
+											<select class="country" name="country">
+												<option data-countrycode="+{{country.dial_code}}" ng-selected="{{country.name == defaultCountry.name}}" ng-repeat="country in countries | orderBy: 'name'" value="{{country.name}}">{{country.name}}</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-7">
+										<input type="text" class="form-control" name="postalCode" placeholder="Postal Code">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="requiredField">
+									<input type="email" class="form-control" name="Email Address" placeholder="Email Address" required>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="forSelect">
+											<select class="countryCode" name="country_code">
+												<option data-country="{{country.name}}" ng-selected="{{country.name == defaultCountry.name}}" ng-repeat="country in countries | orderBy: 'name'" value="+{{country.dial_code}}">+{{country.dial_code}} - {{country.name}}</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-8">
+										<input type="tel" class="form-control" name="phone" placeholder="Phone Number">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row coloredBanner redBanner">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-12 div-table">
+							<div class="col-md-12 div-table-row">
+								<div class="col-lg-6 col-md-12">
+									<h2>SELECT THE MAILINGS YOU WOULD LIKE TO RECEIVE</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row optinForm">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="back-to-top">
+							<a href="#main-container">
+								<img src="img/up-arrow.png"><br>
+								Back to Top
+							</a>
+						</div>
+						<p>Use the switches below to manage your email subscriptions. Press “Update” to save your changes.</p>
+						<h3>NEWS AND INFORMATION</h3>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub1" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>General SHA Announcements</strong>
+								<br>
+								Information and announcements from SHA
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub2" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Sha Newsletter</strong>
+								<br>
+								Summarizes the school's important news. Stories focus on research, events, alumni, and key newsworthy items around the school. Frequency: Six to twelve times a year
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub3" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Center for Hospitality Research Newsletter </strong>
+								<br>
+								Summarizes the center's important news. Frequency: Six times a year
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub4" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Center for Real Estate and Finance Newsletter </strong>
+								<br>
+								Summarizes the center's important news. Frequency: Four times a year
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub5" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Leland C. and Mary M. Pillsbury Institute for Hospitality Entrepreneurship Newsletter   </strong>
+								<br>
+								Summarizes the institute's important news. Frequency: Twice a year
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub6" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Cornell Institute for Hospitality Labor and Employment Relations Newsletter</strong>
+								<br>
+								Summarizes the institute's important news. Frequency: Twice a year
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub7" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Press Releases</strong>
+								<br>
+								Detailed news from SHA
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub8" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Executive Education – Classroom Learning</strong>
+								<br>
+								Programs for industry professionals: General Managers Program (GMP), Professional Development Program (PDP), Advanced Management Program (AMP), and custom programs
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub9" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Executive Education – Online Learning</strong>
+								<br>
+								Online learning options for industry professionals: certificates, courses, and MOOCs
+							</div>
+						</div>
+						<h3>EVENTS AND INDUSTRY CONFERENCES</h3>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub10" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>SHA Alumni events (alumni only)</strong>
+								<br>
+								Reunion, Homecoming
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub11" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Cornell Hotel Society mailings (alumni only)</strong>
+								<br>
+								Announces events held by local and regional chapters of the society, and other alumni events such as those held during the Hotel Show, Faculty Road Show, and HEC
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub12" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Cornell Hospitality Icon and Innovator Awards</strong>
+								<br>
+								SHA's premier annual fundraising event, and a celebration to honor visionary leaders in hospitality, business, and philanthropy
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub13" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Panels featuring alumni and industry experts</strong>
+								<br>
+								Cornell International Hospitality Summit, Dean’s Leadership Series, Women in Senior Leadership
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub14" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Receptions at industry conferences</strong>
+								<br>
+								Cornell Reception at ALIS, Cornell MMH Reception, Cornell Reception at Hot.E, Cornell Reception at IHIF/ITB
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub15" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Hotel Ezra Cornell</strong>
+								<br>
+								Information about HEC, the school’s annual, three-day industry conference run entirely by SHA students for hospitality industry leaders
+							</div>
+						</div>
+						<div class="col-md-12 div-table-row">
+							<div class="div-table-cell">
+								<input type="checkbox" class="switchbox" name="sub16" checked>
+							</div>
+							<div class="div-table-cell">
+								<strong>Cornell Real Estate Council</strong>
+								<br>
+								SHA sends news and event invites on behalf of the Cornell Real Estate Council
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row coloredBanner blackBanner">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-12 div-table">
+							<div class="col-md-12 div-table-row">
+								<div class="col-md-12">
+									<h2>SELECT YOUR AREAS OF INTEREST</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row optinForm interests">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="back-to-top">
+							<a href="#main-container">
+								<img src="img/up-arrow.png"><br>
+								Back to Top
+							</a>
+						</div>
+						<p>Use the switches below to specify the topics about which you'd like to receive mailings. These selections are independent of your subscriptions to specific mailings above. Press "Update" to save your changes.</p>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub17" checked>
+								</div>
+								<div class="div-table-cell">
+									Real estate, finance, and accounting
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub18" checked>
+								</div>
+								<div class="div-table-cell">
+									Human resources management
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub19" checked>
+								</div>
+								<div class="div-table-cell">
+									Hospitality management (hotels, resorts, casinos)
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub20" checked>
+								</div>
+								<div class="div-table-cell">
+									Operations management
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub21" checked>
+								</div>
+								<div class="div-table-cell">
+									Entrepreneurship
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub22" checked>
+								</div>
+								<div class="div-table-cell">
+									Law and policy
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub23" checked>
+								</div>
+								<div class="div-table-cell">
+									Tourism
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub24" checked>
+								</div>
+								<div class="div-table-cell">
+									Restaurants, foodservice, and beverage management
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="div-table-cell">
+									<input type="checkbox" class="switchbox" name="sub25" checked>
+								</div>
+								<div class="div-table-cell">
+									Marketing
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row coloredBanner greyBanner">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-12 div-table">
+							<div class="col-md-12 div-table-row">
+								<div class="col-md-12">
+									<h2>UNSUBSCRIBE</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row unsubscribe">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="back-to-top btt-center">
+							<a href="#main-container">
+								<img src="img/up-arrow.png"><br>
+								Back to Top
+							</a>
+						</div>
+						<p>If you wish to unsubscribe from ALL emails from the Cornell School of Hotel Administration, check the box and press "Update".</p>
+						<div class="col-md-12">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="unsubscribe"> I no longer wish to receive any future SHA emails.
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row coloredBanner redBanner">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-12 div-table">
+							<div class="col-md-12 div-table-row">
+								<div class="col-md-3 col-md-offset-3 div-table-cell mobileCenter marginBottom" style="text-align:right;">
+									<button class="btn btn-default" type="submit"><h2>UPDATE</h2></button>
+								</div>
+								<div class="col-md-3 div-table-cell mobileCenter">
+									<button class="btn btn-default btn-cancel"><h2>CANCEL</h2></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row footer">
+					<div class="col-md-3 col-md-offset-1">
+						<a href="https://sha.cornell.edu/"><img src="img/cornell-hotel-logo.png"></a>
+					</div>
+					<div class="col-md-7">
+						<a href="https://www.facebook.com/CornellSHA"><img src="img/cornell-facebook.png"></a>&nbsp;&nbsp;
+						<a href="https://instagram.com/Cornell_SHA/"><img src="img/cornell-instagram.png"></a>&nbsp;&nbsp;
+						<a href="https://twitter.com/Cornell_SHA"><img src="img/cornell-twitter.png"></a>&nbsp;&nbsp;
+						<a href="https://www.youtube.com/user/CornellHotelSchool"><img src="img/cornell-youtube.png"></a>&nbsp;&nbsp;
+						<a href="https://www.linkedin.com/edu/cornell-university-school-of-hotel-administration-165065"><img src="img/cornell-linkedin.png"></a>&nbsp;&nbsp;
+						<a href="https://plus.google.com/101484394552788179479/about"><img src="img/cornell-google.png"></a>
+						<p>
+							School of Hotel Administration, Ithaca, NY 14853-6902, 607.255.9393<br>
+							&copy; 2015 Cornell University School of Hotel Administration &#8226; Ithaca, New York
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-switch.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+		
+		<script src="js/script.js"></script>
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+	</body>
+</html>

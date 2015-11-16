@@ -1,0 +1,35 @@
+<div class="container-fliud home-page">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="hero">
+				<div class="clever-title">
+					<div class="col-xs-5">
+						<h1>kevin</h1>
+					</div>
+					<div class="col-xs-2 icon_carousel" ng-controller="iconCarouselCtrl">
+						<uib-carousel interval="2500" no-wrap="false">
+							<uib-slide>
+								<i class="fa fa-code"></i>
+							</uib-slide>
+							<uib-slide>
+								<img src="img/telescope-icon.png">
+							</uib-slide>
+							<uib-slide ng-repeat="slide in slides | orderBy:random">
+								<i class="fa" ng-class="slide.icon"></i>
+							</uib-slide>
+						</uib-carousel>
+					</div>
+					<div class="col-xs-5">
+						<h1>reilly</h1>
+					</div>
+				</div>
+				<p>test site</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div ui-view="updates"></div>
+		</div>
+	</div>
+</div>
