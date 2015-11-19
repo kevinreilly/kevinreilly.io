@@ -35,32 +35,31 @@
 		{
 			"title": "Vino Visit",
 			"slug": "vinovisit",
-			"url": "http://vinovisit.com",
 			"desc": "Vino Visit is a winery marketing company with hundreds of Napa Valley wineries as clients. I solely developed a Wordpress Multisite Network that gave each winery it's own fully branded iPad webapp for in-person ratings, a WooCommerce microsite for selling their wines outside of the winery, as well as a fully branded email campaign to promote the ecommerce site."
 		},
 		{
 			"title": "Home Union",
 			"slug": "home-union",
 			"url": "http://kevinreilly.io/portfolio-files/home-union",
-			"desc": "Home Union description"
+			"desc": ""
 		},
 		{
 			"title": "Naturebox Modal",
 			"slug": "naturebox",
 			"url": "http://naturebox.com",
-			"desc": "Naturebox description"
+			"desc": ""
 		},
 		{
 			"title": "Cornell Preference Center",
 			"slug": "cornell-preference-center",
 			"url": "http://kevinreilly.io/portfolio-files/cornell-preference-center",
-			"desc": "Cornell description"
+			"desc": ""
 		},
 		{
 			"title": "Mendelements",
 			"slug": "mendelements",
 			"url": "http://mendelements.com",
-			"desc": "Mendelements description"
+			"desc": ""
 		}
 	],
 	"email": [
@@ -68,31 +67,31 @@
 			"title": "Cornell Newsletters",
 			"slug": "cornell-newsletters",
 			"url": "http://kevinreilly.io/portfolio-files/cornell-newsletters",
-			"desc": "Cornell Newsletters description"
+			"desc": ""
 		},
 		{
 			"title": "LifeLock",
 			"slug": "lifelock",
 			"url": "http://kevinreilly.io/portfolio-files/lifelock",
-			"desc": "LifeLock description"
+			"desc": ""
 		},
 		{
 			"title": "San Mateo Credit Union",
 			"slug": "smcu",
 			"url": "http://kevinreilly.io/portfolio-files/smcu",
-			"desc": "SMCU description"
+			"desc": ""
 		},
 		{
 			"title": "San Jose Earthquakes",
 			"slug": "earthquakes",
 			"url": "http://kevinreilly.io/portfolio-files/earthquakes",
-			"desc": "Earthquakes description"
+			"desc": ""
 		},
 		{
 			"title": "Intego",
 			"slug": "intego",
 			"url": "http://kevinreilly.io/portfolio-files/intego",
-			"desc": "Intego description"
+			"desc": ""
 		}
 	]
 }

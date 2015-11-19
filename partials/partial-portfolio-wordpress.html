@@ -20,8 +20,8 @@
 	    	<div class="portfolio-item-desc">
 	    		<div>
 					<h3>{{x.title}}</h3>
-					<a href="{{x.url}}" target="_blank">View &raquo;</a><br>
-					<p>{{x.desc}}</p>
+					<a ng-if="x.url" href="{{x.url}}" target="_blank">View &raquo;</a><br>
+					<p ng-if="x.desc">{{x.desc}}</p>
 				</div>
 			</div>
 	    </div>

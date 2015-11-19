@@ -2,13 +2,13 @@ var webApp = angular.module('webApp', ['ui.router','ui.bootstrap','ngAnimate']);
 
 webApp.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
     
     $stateProvider
         
         // home view
         .state('home', {
-            url: '/home',
+            url: '/',
             views: {
                 '': { templateUrl: 'partials/partial-home.html' },
                 'iconCarousel@home': {
@@ -41,8 +41,13 @@ webApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/email',
             templateUrl: 'partials/partial-portfolio-email.html',
             controller: 'portfolioEmailCtrl'
-        });
-        
+        })
+        // photography view
+        .state('photography', {
+            url: '/photography',
+            templateUrl: 'partials/photography.html',
+            controller: 'photographyCtrl'
+        });        
 });
 
 // main controller
@@ -67,34 +72,27 @@ webApp.controller('portfolioCtrl', function($scope){
 });
 
 // portfolio animations
-
 var portfolioAnimations = function(){
-    // portfolio items
     $('.portfolio-list').on('mouseenter', '.portfolio-item', function(){
         $(this).addClass('portfolio-item-hover');
     });
     $('.portfolio-list').on('mouseleave', '.portfolio-item', function(){
         $(this).removeClass('portfolio-item-hover');
     });
-
     $('.portfolio-list').on('click', '.portfolio-item', function(){
-        //$(this).addClass('portfolio-item-open');
         $(this).find('.portfolio-item-overlay').fadeToggle();
         $(this).find('.portfolio-item-desc').slideToggle();
         $('html, body').animate({
             scrollTop: $(this).offset().top - 50
         }, 750);
     });
-    /*$('.portfolio-list').on('click', '.portfolio-item-open', function(){
-        //$(this).removeClass('portfolio-item-open');
-        $(this).find('.portfolio-item-overlay').fadeIn();
-    });*/
 };
 
 
 // wordpress portfolio controller
 webApp.controller('portfolioWordPressCtrl', function($scope, $http){
-    $http.get("http://kevinreilly.io/json/portfolio.json")
+    var currentPath = window.location.pathname;
+    $http.get("http://kevinreilly.io"+ currentPath +"json/portfolio.json")
     .success(function(response){
         $scope.wordpress = response.wordpress;
     });
@@ -103,7 +101,8 @@ webApp.controller('portfolioWordPressCtrl', function($scope, $http){
 
 // web portfolio controller
 webApp.controller('portfolioWebCtrl', function($scope, $http){
-    $http.get("http://kevinreilly.io/json/portfolio.json")
+    var currentPath = window.location.pathname;
+    $http.get("http://kevinreilly.io"+ currentPath +"json/portfolio.json")
     .success(function(response){
         $scope.web = response.web;
     });
@@ -112,11 +111,19 @@ webApp.controller('portfolioWebCtrl', function($scope, $http){
 
 // email portfolio controller
 webApp.controller('portfolioEmailCtrl', function($scope, $http){
-    $http.get("http://kevinreilly.io/json/portfolio.json")
+    var currentPath = window.location.pathname;
+    $http.get("http://kevinreilly.io"+ currentPath +"json/portfolio.json")
     .success(function(response){
         $scope.email = response.email;
     });
     portfolioAnimations();
+});
+webApp.controller('photographyCtrl', function($scope, $http){
+    var currentPath = window.location.pathname;
+    $http.get("http://kevinreilly.io"+ currentPath +"json/albums.json")
+    .success(function(response){
+        $scope.albums = response.albums;
+    });
 });
 
 // icon carousel controller
