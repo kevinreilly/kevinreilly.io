@@ -1,0 +1,288 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+
+/* General */
+html, body {
+	font-family:'Ubuntu',sans-serif;
+	font-weight:300;
+	font-size:18px;
+	color:#fff;
+	background:#000;
+	-webkit-font-smoothing:antialiased;
+}
+body > .container-fluid {
+	margin-top:50px;
+}
+
+/* Navbar */
+nav {
+	&.navbar-inverse{
+		background:rgba(#000,.8);
+		border:0;
+	}
+	&.navbar-inverse * {
+		background:transparent;
+		border:0;
+	}
+	.navbar-right li {
+		display:inline-block;
+	}
+}
+
+/* Vertical aligning */
+.div-table {
+	display:table;
+	height:100%;
+	width:100%;
+}
+.div-table-row {
+	display:table-row;
+}
+.div-table-cell {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+/* Hero */
+.hero {
+	height:100vh;
+	padding:80px 30px 30px;
+	margin-top:-50px;
+	background-size:cover !important;
+	-webkit-transition:1s;
+	transition:1s;
+	&.short-hero {
+		height:50vh;
+	}
+	&.valign {
+		display:table;
+		width:100%;
+		@include transition(1s);
+	}
+	&.valign > div {
+		display:table-row;
+	}
+	&.valign > div > div {
+		display:table-cell;
+		vertical-align:middle;
+		float:none;
+	}
+	.col-md-12 {
+		text-align:center;
+	}
+	h1 {
+		margin:0;
+		font-size:5em;
+		color:#fff;
+		font-weight:300;
+	}
+	p {
+		text-align:center;
+		color:#fff;
+		font-size:1.5em;
+	}
+	p a {
+		color:#fff;
+		text-decoration:underline;
+	}
+	p a:hover {
+		color:#ddd;
+	}
+	@media (max-width:768px){
+		h1 {
+			font-size:2.5em;
+		}
+		p {
+			font-size:1em;
+		}
+	}
+}
+
+/* Clever title */
+.clever-title > div {
+	padding:0;
+}
+.clever-title > div:nth-of-type(1){
+	text-align:right;
+}
+
+/* Icon Carousel */
+.icon_carousel {
+	i.fa {
+		color:#fff;
+		font-size:5em;
+	}
+	img {
+		height:90px !important;
+		margin:auto;
+	}
+	a.carousel-control, ol.carousel-indicators {
+		display:none;
+	}
+	@media(max-width:768px){
+		i.fa {
+			font-size:2.5em;
+		}
+		img {
+			height:45px !important;
+		}
+	}
+}
+
+/* Home */
+.home-page {
+	.hero {
+		background:#000 url(../img/kevin-hero-bg.jpg) bottom center no-repeat;
+	}
+}
+
+/* Portfolio */
+.portfolio-page {
+	.hero {
+		background:#000 url(../img/albums/into-the-glacier/into-the-glacier-34.jpg) center center no-repeat;
+	}
+	.portfolio-filters {
+		margin-top:30px;
+	}
+	.portfolio-filters a.btn {
+		background-color:rgba(#000,.8);
+		border:0;
+		border-radius:0;
+		margin:5px;
+		min-width:150px;
+		color:#fff;
+		@include transform(scale(1,1));
+	    @include transition(.5s);
+	}
+	.portfolio-filters a.btn.mouseOn {
+		color:#fff;
+		@include transform(scale(1.1,1.1));
+	}
+	.portfolio-filters a.btn.selected {
+		background:rgba(#fff,.8);
+		color:#333;
+	}
+
+	.portfolio-item {
+		margin-bottom:30px;
+		cursor:pointer;
+	}
+	.portfolio-item > div {
+		overflow:hidden;
+		padding:0;
+		border:1px solid #333;
+	}
+	.portfolio-item .portfolio-item-overlay {
+		position:absolute;
+	    top:0;
+	    background:rgba(0,0,0,.9);
+	    height:100%;
+	    width:100%;
+	    padding:30px;
+	    text-align:center;
+		opacity:1;
+	    @include transition(.5s)
+	}
+	.portfolio-item .portfolio-item-overlay img {
+		width:75%;
+		opacity:.9;
+	}
+	.portfolio-item-open.portfolio-item-hover .portfolio-item-overlay {
+		opacity:0;
+	}
+	.portfolio-item-desc {
+		padding:0 15px 15px;
+		display:none;
+	}
+	.portfolio-item-desc p {
+		font-size:.9em;
+	}
+	@media (min-width:768px){
+		.portfolio-item-hover .portfolio-item-overlay {
+			opacity:0;
+		}
+	}
+	/* Column messiness fix */
+	@media (min-width:768px) and (max-width:991px){
+		.portfolio-list div:nth-of-type(2n+1){
+			clear:both;
+		}
+	}
+	@media (min-width:992px){
+		.portfolio-list div:nth-of-type(3n+1){
+			clear:both;
+		}
+	}
+}
+
+/* Parallax Stuff */
+/*
+.parallax {
+    height: 500px;
+    height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+.parallax_group {
+    position: relative;
+    height: 500px;
+    height: 50vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+.parallax_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.parallax_layer-fore {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+.parallax_layer-back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+}
+.parallax_layer_container {
+	text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+*/
+
+/*
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+}
+[ui-view].ng-enter {
+  opacity: 0;
+}
+[ui-view].ng-enter-active {
+  opacity: 1;
+}
+[ui-view].ng-leave {
+  opacity: 1;
+}
+[ui-view].ng-leave-active {
+  opacity: 0;
+}
+*/

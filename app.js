@@ -128,5 +128,5 @@ webApp.controller('photographyCtrl', function($scope, $http){
 
 // icon carousel controller
 webApp.controller('iconCarouselCtrl', function($scope){
-    $scope.icons = ['fa-camera-retro','fa-beer','fa-laptop','fa-tree','fa-rocket','fa-wordpress','fa-map','fa-hand-spock-o','fa-steam-square','fa-rebel','fa-bicycle','fa-music'];
+    $scope.icons = ['fa-camera-retro','fa-beer','fa-laptop','fa-tree','fa-rocket','fa-wordpress','fa-map','fa-hand-spock-o','fa-steam-square','fa-rebel','fa-music'];
 });
